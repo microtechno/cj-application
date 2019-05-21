@@ -1,6 +1,10 @@
 package com.cjayawardana.customerservice.model;
 
+import com.cjayawardana.customerservice.validator.CaseMode;
+import com.cjayawardana.customerservice.validator.CheckCase;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Customer {
@@ -10,12 +14,17 @@ public class Customer {
     @Column(name = "id")
     private long id;
 
+    @NotNull
+    @CheckCase(value = CaseMode.UPPER, message = "Please provide firstName in UPPER case")
     @Column(name = "firstName")
     private String firstName;
 
+    @NotNull
+    @CheckCase(value = CaseMode.UPPER, message = "Please provide lastName in UPPER case")
     @Column(name = "lastName")
     private String lastName;
 
+    @NotNull
     @Column(name = "email")
     private String email;
 

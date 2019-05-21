@@ -3,5 +3,5 @@ rootProject.name = 'cj-application'
 include "customer-service"
 include "discovery-service"
 include "gateway-service"
-include 'gateway-api'
+
 
